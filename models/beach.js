@@ -4,20 +4,21 @@ var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema ({
     content: String,
-    Rating: {
+    rating: {
         type: String,
-        enum: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star']
+        enum: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
+        default: '5 Stars'
     }
 }, {
     timestamps: true
 });
 
 var beachSchema = new Schema ({
-    Beach: {
+    beach: {
         type: String,
         required: true
     },
-    Location: {
+    location: {
         type: String,
         required: true
     },

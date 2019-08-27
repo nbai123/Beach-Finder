@@ -14,7 +14,7 @@ function index(req, res) {
 }
 
 function newBeach(req, res) {
-    res.render('beaches/new');
+    res.render('beaches/new', {title: 'New Beach', });
 }
 
 function show(req, res) {

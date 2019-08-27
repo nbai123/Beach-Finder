@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+    <h2>Enter Beach Information</h2>
+<form action="/beaches" method="POST">
+	<label>Beach:
+	  <input type="text" name="beach">
+	</label><br>
+	<label>Location: 
+        <input type="text" name="location">
+  </label><br>
+  <input type="submit" value="Add Beach">
+</form>
+
+<%- include('../partials/footer') %>

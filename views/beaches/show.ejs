@@ -1,0 +1,48 @@
+<%- include('../partials/header') %>
+
+    <section>
+        <div>Beach Name: <%= beach.beach %></div>
+        <div>Beach Location: <%= beach.location %></div>
+        <div>Reviews</div>
+    </section>
+
+    <h2>Reviews</h2>
+    <form id="add-review-form" method="POST"
+    action="/beaches/<%= beach._id %>/reviews">
+        <label>Reviews:</label>
+        <textarea name="content"></textarea>
+        <select name="rating">
+            <option value="5 Stars">5 Stars</option>
+            <option value="4 Stars">4 Stars</option>
+            <option value="3 Stars">3 Stars</option>
+            <option value="2 Stars">2 Stars</option>
+            <option value="1 Star">1 Star</option>
+        </select>
+        <input type="submit" value="Add Review"> 
+    </form>
+
+    <% if (beach.reviews.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% beach.reviews.forEach(function(r) { %>
+              <tr>
+                <td><%= r.createdAt.toLocaleDateString() %></td>
+                <td><%= r.content %></td>
+                <td><%= r.rating %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+      <% } %>
+      
+    
+<%- include('../partials/footer') %>
