@@ -5,6 +5,6 @@ var beachesCtrl = require('../controllers/beaches');
 router.get('/', beachesCtrl.index);
 router.get('/new', beachesCtrl.new);
 router.get('/:id', beachesCtrl.show);
-router.post('/', beachesCtrl.create)
+router.post('/', beachesCtrl.create);
 
 module.exports = router;

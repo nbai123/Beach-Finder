@@ -6,9 +6,9 @@ var reviewSchema = new Schema ({
     content: String,
     rating: {
         type: String,
-        enum: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
-        default: '5 Stars'
-    }
+        enum: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star']
+    },
+    userID: String,
 }, {
     timestamps: true
 });

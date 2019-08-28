@@ -2,13 +2,14 @@ var Beach = require('../models/beach');
 
 module.exports = {
     create,
-    deleteReview
+    deleteReview,
+    // update
 }
 
 function create (req, res) {
-    console.log(req.params.id)
-    Beach.findById(req.params.id, function (err, beach) {
-        console.log(beach)
+    Beach.findById(req.params.bid, function (err, beach) {
+        req.body.userID = req.user.id;
+        console.log(req.body.userID);
         beach.reviews.push(req.body);
         beach.save(function (err) {
             res.redirect(`/beaches/${beach._id}`);
@@ -17,5 +18,15 @@ function create (req, res) {
 };
 
 function deleteReview (req, res) {
-    
-}
+    Beach.findById(req.params.bid, function(err, beach) {
+        var review = beach.reviews.id(req.params.rid)
+        review.remove();
+            beach.save(function(err) {
+                res.redirect(`/beaches/${beach._id}`);
+            })
+        })
+};
+
+// function update (req, res) {
+
+// }

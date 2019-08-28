@@ -13,6 +13,11 @@
           <div>
             <a href="/beaches/new">Add A Beach</a>
             <a href="/beaches">Beaches</a>
+                    <% if (user) { %>
+                        <a href="/logout">Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                    <% } %>
           </div>
       </nav>
   </body>
