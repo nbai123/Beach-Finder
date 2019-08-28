@@ -37,7 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
-app.use('/', indexRouter);
+app.use('/beaches', indexRouter);
 app.use('/users', usersRouter);
 app.use('/beaches', beachesRouter);
 app.use('/', reviewsRouter);
