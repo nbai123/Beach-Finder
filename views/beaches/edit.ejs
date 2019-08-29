@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<form id="update-review-form" method="POST" action="/beaches/<%= beach._id %>/reviews/edit/<%= review._id%>?_method=PUT">
+    <label>Reviews:</label>
+    <textarea name="content"></textarea>
+    <select name="rating">
+        <option value="5 Stars">5 Stars</option>
+        <option value="4 Stars">4 Stars</option>
+        <option value="3 Stars">3 Stars</option>
+        <option value="2 Stars">2 Stars</option>
+        <option value="1 Star">1 Star</option>
+    </select>
+    <input type="submit" value="Update Review">
+</form>
+
+<%- include('../partials/footer') %>

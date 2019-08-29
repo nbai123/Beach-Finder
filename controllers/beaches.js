@@ -9,7 +9,7 @@ module.exports = {
 
 function index(req, res) {
     Beach.find({}, function(err, beaches) {
-        res.render('beaches/index', { title: 'All Beaches', beaches, user: req.user});
+        res.render('beaches/index', {title: '', beaches, user: req.user});
     });
 }
 

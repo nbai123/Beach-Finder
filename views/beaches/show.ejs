@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
-
 <section>
     <div>Beach Name: <%= beach.beach %></div>
     <div>Beach Location: <%= beach.location %></div>
 </section>
 
 <h2>Reviews</h2>
+
 <form id="add-review-form" method="POST" action="/beaches/<%= beach._id %>/reviews">
     <label>Reviews:</label>
     <textarea name="content"></textarea>
@@ -19,33 +19,34 @@
     <input type="submit" value="Add Review">
 </form>
 
-<% if (beach.reviews.length) { %>
 <table class="text-center">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Rating</th>
-            <th>Review</th>
-        </tr>
-    </thead>
+<thead>
+    <tr>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Review</th>
+    </tr>
+</thead>
+<% if (beach.reviews.length) { %>
+<% beach.reviews.forEach(function(r) { %>
+
     <tbody>
-        <% beach.reviews.forEach(function(r) { %>
         <tr>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.rating %></td>
             <td><%= r.content %></td>
             <td>
+                <form action="/beaches/<%= beach._id %>/edit/<%= r._id %>" method="GET">
+                    <button type="submit">Update Post</button>
+                </form>
+            </td>
+            <td>
                 <form action="/beaches/<%= beach._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
                     <button type="submit">Remove Post</button>
                 </form>
             </td>
-            <td>
-                <form action="/reviews/<%= r._id %>" method="GET">
-                    <button type="submit">Update Post</button>
-                </form>
-            </td>
         </tr>
-        <% }); %>
+<% }) %>
     </tbody>
 </table>
 <% } else { %>
