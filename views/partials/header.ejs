@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../stylesheets/style.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Beach Finder</title>
   </head>
   <body>
       <nav>
-          <div>
-            <a href="/beaches/new">Add A Beach</a>
-            <a href="/beaches">Beaches</a>
+          <div class="d-flex bd-highlight mb-3">          
+            <a href="/beaches" class="p-2 bd-highlight">Beaches</a>
+            <a href="/beaches/new" class="p-2 bd-highlight">Add A Beach</a>
+            <h1 class="mx-auto text-center" style="width: 750px;">Beach Finder!</h1>
                     <% if (user) { %>
-                        <a href="/logout">Log Out</a>
+                        <a href="/logout" class="ml-auto p-2 bd-highlight">Log Out</a>
                     <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                    <% } %>
+                        <a href="/auth/google" class="ml-auto p-2 bd-highlight">Login with Google</a>
+                    <% } %>         
           </div>
       </nav>
-  </body>
+  <section id=background>
   <main>

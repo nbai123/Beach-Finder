@@ -31,8 +31,6 @@ function deleteReview (req, res) {
 function update(req, res) {
     Beach.findById(req.params.bid, function(err, beach) {
         var review = beach.reviews.id(req.params.rid)
-       console.log(review);
-       console.log(req.body);
        review.content = req.body.content;
        review.rating = req.body.rating;
        beach.save(function(err) {

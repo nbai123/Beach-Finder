@@ -1,57 +1,70 @@
 <%- include('../partials/header') %>
-<section>
-    <div>Beach Name: <%= beach.beach %></div>
-    <div>Beach Location: <%= beach.location %></div>
-</section>
 
-<h2>Reviews</h2>
+<div class="mx-auto text-center" style="width: 750px">
+    <section>
+        <div>Beach Name: <%= beach.beach %></div>
+        <div>City/State: <%= beach.location %></div>
+        <div>Beach Addres: <%= beach.address %></div>
+    </section>
 
-<form id="add-review-form" method="POST" action="/beaches/<%= beach._id %>/reviews">
-    <label>Reviews:</label>
-    <textarea name="content"></textarea>
-    <select name="rating">
-        <option value="5 Stars">5 Stars</option>
-        <option value="4 Stars">4 Stars</option>
-        <option value="3 Stars">3 Stars</option>
-        <option value="2 Stars">2 Stars</option>
-        <option value="1 Star">1 Star</option>
-    </select>
-    <input type="submit" value="Add Review">
-</form>
+    <h2>Reviews</h2>
 
-<table class="text-center">
-<thead>
-    <tr>
-        <th>Date</th>
-        <th>Rating</th>
-        <th>Review</th>
-    </tr>
-</thead>
-<% if (beach.reviews.length) { %>
-<% beach.reviews.forEach(function(r) { %>
+    <% if (user) { %>
+    <form id="add-review-form" method="POST" action="/beaches/<%= beach._id %>/reviews">
+        <label>Reviews:</label>
+        <textarea name="content"></textarea>
+        <select name="rating">
+            <option value="5 Stars">5 Stars</option>
+            <option value="4 Stars">4 Stars</option>
+            <option value="3 Stars">3 Stars</option>
+            <option value="2 Stars">2 Stars</option>
+            <option value="1 Star">1 Star</option>
+        </select>
+        <input type="submit" value="Add Review">
+    </form>
+    <% } else { %>
+    <p>Must be logged in to leave a review</p>
+    <% } %>
 
-    <tbody>
-        <tr>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.rating %></td>
-            <td><%= r.content %></td>
-            <td>
-                <form action="/beaches/<%= beach._id %>/edit/<%= r._id %>" method="GET">
-                    <button type="submit">Update Post</button>
-                </form>
-            </td>
-            <td>
-                <form action="/beaches/<%= beach._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">Remove Post</button>
-                </form>
-            </td>
-        </tr>
-<% }) %>
-    </tbody>
-</table>
-<% } else { %>
-<h5>No Reviews Yet</h5>
-<% } %>
+    <table class="text-center">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <% if (beach.reviews.length) { %>
+        <% beach.reviews.forEach(function(r) { %>
 
+        <tbody>
+            <tr>
+                <td><%= r.createdAt.toLocaleDateString() %></td>
+                <td><%= r.rating %></td>
+                <td><%= r.content %></td>
+
+                <% } else { %>
+                <h5>No Reviews Yet</h5>
+                <% }) %>
+                <% } %>
+                <% if (user) { %>
+                <% if ((beach.review._id.equals( user && userID ) || (review.userID.toString() == user._id.toString()) %>
+                <td>
+                    <form action="/beaches/<%= beach._id %>/edit/<%= r._id %>" method="GET">
+                        <button type="submit">Update Post</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/beaches/<%= beach._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Remove Post</button>
+                    </form>
+                </td>
+                <% )) %>
+                <% } %>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
 
 <%- include('../partials/footer') %>

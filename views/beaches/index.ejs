@@ -1,12 +1,13 @@
 <%- include('../partials/header') %>
 
-<div class="mx-auto" style="width: 200px;">
+<div class="mx-auto text-center" id=list style="width: 750px;">
         <h1>Beach List</h1>
         <table>
             <thead>
                 <tr>
                     <th>Beach</th>
                     <th>Location</th>
+                    <th>Address</th>
                 </tr>
             </thead>
             <tbody>
@@ -14,7 +15,8 @@
                     <tr>
                         <td><%= b.beach %></td>
                         <td><%= b.location %></td>
-                        <td><a href="/beaches/<%= b._id %>">DETAILS</a></td>
+                        <td><%= b.address %></td>
+                        <td><a href="/beaches/<%= b._id %>">Reviews</a></td>
                     </tr>
                 <% }); %>
             </tbody>

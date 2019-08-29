@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<div class="mx-auto text-center" style="width: 750px">
 <form id="update-review-form" method="POST" action="/beaches/<%= beach._id %>/reviews/edit/<%= review._id%>?_method=PUT">
     <label>Reviews:</label>
     <textarea name="content"></textarea>
@@ -12,5 +13,6 @@
     </select>
     <input type="submit" value="Update Review">
 </form>
+</div>
 
 <%- include('../partials/footer') %>
