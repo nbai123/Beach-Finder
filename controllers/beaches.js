@@ -21,6 +21,7 @@ function show(req, res) {
     Beach.findById(req.params.id, function(err, beach) {
         res.render('beaches/show', { title: 'Beach Detail', beach, user: req.user });
     });
+    // res.send('showpage')
 }
 
 function create(req, res) {

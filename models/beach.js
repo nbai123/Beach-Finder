@@ -8,7 +8,7 @@ var reviewSchema = new Schema ({
         type: String,
         enum: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star']
     },
-    userID: String,
+    email: String,
 }, {
     timestamps: true
 });

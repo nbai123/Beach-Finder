@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function create (req, res) {
-    req.body.userID = req.user.id;
+    req.body.email = req.user.email;
     Beach.findById(req.params.bid, function (err, beach) {
         beach.reviews.push(req.body);
         beach.save(function (err) {
