@@ -2,6 +2,8 @@
 
 ## Description
 
+<https://beachfinder.herokuapp.com/>
+
 A web browser based application that allows users to view beaches and reviews that other user have posted for those beaches. Users also have to ability to add a beach if the beach does not already exist.
 
 ## Tehcnologies Used

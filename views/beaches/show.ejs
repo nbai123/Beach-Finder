@@ -41,7 +41,7 @@
                         <td id = "date"><%= r.createdAt.toLocaleDateString() %></td>
                         <td><%= r.rating %></td>
                         <td class='col-md-5' id='review'><%= r.content %></td>  
-                    
+                <% if (user) { %>    
                 <% if (r.email === user.email) { %>
                 <td>
                     <form action="/beaches/<%= beach._id %>/edit/<%= r._id %>" method="GET">
@@ -53,6 +53,7 @@
                         <button type="submit">Remove Post</button>
                     </form>
                 </td>
+                <% } %>
                 <% } %>
               
             </tr>
