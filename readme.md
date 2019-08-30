@@ -8,12 +8,12 @@ A web browser based application that allows users to view beaches and reviews th
 
 ## Tehcnologies Used
 
-Node.JS
-MongoDB
-Mongoose
-Express
-HTML
-CSS
+Node.JS,
+MongoDB,
+Mongoose,
+Express,
+HTML,
+CSS,
 Bootstrap
 
 ![Image of Landing Page](https://imgur.com/Nfoxmj5.jpg)
@@ -26,7 +26,7 @@ User must be logged in, in order to be able to post reviews on a beach.
 Users can update or remove posts that they have made.
 Users also have the ability to add beaches.
 
-## Futre Plans
+## Future Plans
 
 Implement beach data from an api source.
 Show amenities that the beach has.
