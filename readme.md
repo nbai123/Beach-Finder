@@ -14,11 +14,11 @@ HTML
 CSS
 Bootstrap
 
-![Image of Landing Page](https://imgur.com/Nfoxmj5)
+![Image of Landing Page](https://imgur.com/Nfoxmj5.jpg)
 
-![Image of Add Beach](https://imgur.com/kDS4LN0)
+![Image of Add Beach](https://imgur.com/kDS4LN0.jpg)
 
-![Image of Reviews Page](https://imgur.com/640L3oc)
+![Image of Reviews Page](https://imgur.com/640L3oc.jpg)
 
 User must be logged in, in order to be able to post reviews on a beach.
 Users can update or remove posts that they have made.
