@@ -7,12 +7,28 @@ main {
      1px 1px 0 #000;
 }
 #background {
-  background-image: url("https://www.designyourway.net/drb/wp-content/uploads/2015/05/Beach-Wallpaper-Desktop-Background-55.jpg");
+  background-image: url("https://www.designyourway.net/drb/wp-content/uploads/2015/05/Beach-Wallpaper-Desktop-Background-19.jpg");
   min-height: 1000px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+#date {
+  padding-right: 10px;
+}
+
+#header {
+  font-size: 18px;
+}
+
+#review {
+  padding: 10px 0 10px 0 !important;
+}
+
+#beaches {
+  padding: 10px;
 }
 
 body {

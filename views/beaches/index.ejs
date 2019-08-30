@@ -12,11 +12,11 @@
             </thead>
             <tbody>
                 <% beaches.forEach(function(b) { %>
-                    <tr>
-                        <td><%= b.beach %></td>
-                        <td><%= b.location %></td>
-                        <td><%= b.address %></td>
-                        <td><a href="/beaches/<%= b._id %>">Reviews</a></td>
+                    <tr>                        
+                            <td id="beaches"><%= b.beach %></td>
+                            <td><%= b.location %></td>
+                            <td><%= b.address %></td>
+                            <td><a href="/beaches/<%= b._id %>">Reviews</a></td>
                     </tr>
                 <% }); %>
             </tbody>

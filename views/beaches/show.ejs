@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <div class="mx-auto text-center" style="width: 750px">
-    <section>
+    <section id="header">
         <div>Beach Name: <%= beach.beach %></div>
         <div>City/State: <%= beach.location %></div>
         <div>Beach Address: <%= beach.address %></div>
@@ -25,7 +25,7 @@
         </form>
         <% } %>
 
-    <table class="text-center">
+    <table class="text-center col-md-12">
         <thead>
             <tr>
                 <th>Date</th>
@@ -38,9 +38,9 @@
             <% beach.reviews.forEach(function(r) { %>
                 <tbody>
                     <tr>
-                        <td><%= r.createdAt.toLocaleDateString() %></td>
+                        <td id = "date"><%= r.createdAt.toLocaleDateString() %></td>
                         <td><%= r.rating %></td>
-                        <td><%= r.content %></td>  
+                        <td class='col-md-5' id='review'><%= r.content %></td>  
                     
                 <% if (r.email === user.email) { %>
                 <td>
